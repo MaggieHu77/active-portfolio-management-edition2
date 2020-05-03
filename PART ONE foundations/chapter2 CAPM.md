@@ -1,6 +1,5 @@
 Chapter 2: Consensus Expected Returns: The Capital Asset Pricing Model
 ======================================================================
----
 + This is the first chapter of part one: Foundation.
 
 + where are we now?
@@ -8,15 +7,12 @@ Chapter 2: Consensus Expected Returns: The Capital Asset Pricing Model
 ```mermaid
 graph LR
 A[APM Foundation] -->|One| B(expected returns)
-subgraph
 B --> |chapter two| E(CAPM, consensus, benchmark)
-  subgraph major points
-  E --> e1[r_i=r_mkt+r_res]
-  E --> e2[expected r_res=0]
-  E --> e3[logic: market efficiency]
-  end
+subgraph major points
+E --> e1[r_i=r_mkt+r_res]
+E --> e2[expected r_res=0]
+E --> e3[logic: market efficiency]
 end
-
 A -->|Two| C(risk)
 A -.->|to be cont.| D(...)
 style E fill:#f96
