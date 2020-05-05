@@ -119,6 +119,66 @@ here attribute is $\bf \beta$, the benchmark portfolio $\bf h_B$ which vector $\
 ##### Portfolio q
 here attribute is expected excess returns $\bf f$, denote portfolio $q$ as its characteristic portfolio.
 
-<font color=red>`Sharpe Ratio` is introduced :</font> $SR_P=\frac{\bf f_P}{\sigma_p}$
++ since $h_q$ is characteristic, it shall fulfill:
+  - from definition: $f_q=h_q^Tf=1$
+  - from equation(2A.2): $\sigma^2_q=\frac{1}{f^TV^{-1}f}$
++ <font color=red>`Sharpe Ratio` is introduced :</font> $SR_P=\frac{\bf f_P}{\sigma_p}$
 
 ##### Proposition2: portfolio with maximum Sharpe Ratio
+1. for portfolio $h_q$, its $SR_q=\frac{f_q}{\sigma_q}=\frac{1}{\sigma_q}=(f^TV^{-1}f)^{1/2}$
+2. from equation(2A.3), we have $f=\frac{Vh_q}{\sigma_q^2}=(\frac{Vh_q}{\sigma_q})SR_q$
+3. for any portfolio $P$ with correlation with portfolio $q$ of $\rho_{P,q}$, its Sharpe Ratio:
+$$SR_P=\frac{f_P}{\sigma_P}=\frac{h_p^T f}{\sigma_P}=(\frac{h_P^T Vh_q}{\sigma_P\sigma_q})SR_q=\frac{\sigma_{P,q}}{\sigma_P \sigma_q}SR_q=\rho_{P,q}SR_q \quad (2A.28)$$
+4.the fraction of portfolio $q$ invested in risky asset: recall equation(2A.4)
+$$\sigma_{q,C}=f_C \sigma^2_q=e_q \sigma^2_C \newline e_q=\frac{f_C \sigma^2_q}{\sigma^2_C}$$
+
+##### Portfolio A
+here portfolio $h_A$ is the characteristic portfolio for attribute alpha, defined as: $\bf \alpha=f-\beta {\it f_B}$. Clearly, $h_A$ can be seen as a combination of portfolio $h_q$ and $h_B$, with $\kappa_q=1$ and $\kappa_B=-f_B$.
+
+portfolio $A$ and portfolio $B$ are uncorrelated: $\sigma_{A, B}=\alpha_B \sigma^2_A=\beta_A \sigma_B^2$. Since portfolio $B$ is the benchmark portfolio, which has no alpha return, so $\alpha_B=0, \sigma_{A,B}=0, \beta_A=0$.
+
+##### Proposition3
+1. define portfolio $Q$ as the characteristic portfolio of attribute $e_qf$, $e_q$ is the investment position of portfolio $q$($e_q>0$), we have:
+$$h_Q=\frac{h_q}{e_q} \newline SR_Q=SR_q$$
+2. from portfolio $q$ and $C$, we have known:
+$$f_C\sigma^2_q=e_q\sigma^2_C$$ replace $e_q$ and $\sigma^2_q$ with $e_Q$ and $\sigma^2_Q$; since $\sigma^2_q=\sigma^2_Qe_q^2$ and $f_Q=h_Q^Tf=\frac{1}{e_q}$,
+so $$f_C\sigma^2_Q=f_Q\sigma^2_C \qquad (2A.35)$$
+from equation(2A.3):
+$${\bf f}=\frac{Vh_q}{\sigma^2_q}=\frac{Vh_Qe_q}{\sigma^2_Q e^2_q}=(\frac{Vh_Q}{\sigma^2_Q})f_Q=f_Q\beta_{\rm respect\, to\, Q} \qquad(2A.36)$$
+equation(2A.36) shows how a fully_invested, largest-Sharpe Ratio portfolio explain the expected excess returns.
+3. The beta of portfolio $Q$(start from $\beta_q$):
+$$\beta_Q=\frac{f_B\sigma^2_Q}{f_Q \sigma^2_B} \qquad(2A.37)$$
+
+##### summary
+| characteristic | portfolio |symbol| meaning |
+| :-- | :-- | :-- |:--|
+| $\bf f$ | $\bf h_q$ | $\rm q$ |largest Sharpe, unit expected excess return |
+| $e_q \bf f$|${\bf h_Q}(f_C>0)$|$Q$|largest Sharpe, fully_invested|
+|$\beta$| $\bf h_B$ | $B$ | unit beta, benchmark portfolio|
+|$\bf e$| $\bf h_C$| $C$ | fully-invested minimum variance |
+|${\bf \alpha=f-\beta }f_B$|$\bf h_A$ | $A$ | unit alpha, uncorrelated with benchmark portfolio|
+
+
+#### 2.The Efficient Frontier
++ all portfolios in efficient-frontier are combinations of $C$ and $Q$, each of them are characteristic portfolios.
+> a fully invested portfolio is *efficient* if it has minimum risk among all portfolios with the same expected return.
++ portfolio $P$ in this frontier can be seen as:
+$$h_P=(\frac{f_Q-f_P}{f_Q-f_C})h_C+(\frac{f_P-f_C}{f_Q-f_C})h_Q \qquad(2A.45)$$
+by solving $min\,h^TVh$ with constraint of $e^Th=1$ and $f^Th=f_p$(Lagrange). $C$ and $Q$ are special cases of this optimization.
++ from equation(2A.5), we can deduce the characteristic behind portfolio $P$, which is also combination of $\bf e$ and $e_p \bf f$:
+$$\omega_C=\frac{(f_Q-f_P)\sigma^2_C}{(f_Q-f_C)\sigma^2_P} \newline \omega_Q=\frac{(f_P-f_C)\sigma^2_Q}{(f_Q-f_C)\sigma^2_P} \newline {\bf \alpha_P}=\omega_Ce+\omega_Qe_pf$$
++ variance of $P$:
+$$\sigma^2_P=\sigma^2_C+\kappa(f_P-f_C)^2 \newline \kappa=\frac{(\sigma^2_Q-\sigma^2_C)}{(f_Q-f_C)^2}$$
+
+#### 3. Restate CAPM
++ all investors have mean/variance preferences
++ all assets are included in analysis
++ all investors have the same expected excess returns
++ all investors agree on asset variances and covariances
++ no transactions costs or taxes
+
+<font color=red>the portfolio Q is equal to portfolio M, and $\bf f=\mu=\beta \mu_M$.</font>
+
+#### 4.Some Conclusion from Excercises
+1. $\beta_C=\sigma^2_C/\sigma^2_M$. Since $C$ has minimum variance among all fully invested portfolio, so $\beta_C \le 1$.
+2.
